@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+table {
+  color: rgb(56, 107, 184);
+  background-color: rgb(56, 107, 184);
+  border: 1px black solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border-collapse: separate;
+  border-spacing: 1rem 1rem;
+}
+
+th, td {
+  padding-left: 2rem;
+  padding-right: 10rem;
+
+  background-color: white;
+  border-radius: 5px;
+}
+
+tr {
+  margin-bottom: 5rem;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

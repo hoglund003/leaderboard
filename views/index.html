@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css\styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="flex-container">
+        <table id="leaderboard"></table>
+    </div>
+
+    <script>
+        var socket = io();
+        const leaderboard = document.getElementById('leaderboard');
+        
+        socket.on('update', function(players) {
+            var HTML_string = `
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+            `;
+            
+            players.forEach(player => {
+                HTML_string += `
+                <tr>
+                    <td>${player["name"]}</td>
+                    <td>${player["score"]}</td>
+                </tr>
+                `;
+            });
+
+            leaderboard.innerHTML = HTML_string;
+        });
+    </script>
+</body>
+</html>
